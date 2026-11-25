@@ -1,7 +1,11 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const text = "3am again. The microwave gets thanked for thirty seconds of work. I keep your entire life cold and nobody says a word.";
+// The 3AM Fridge Text (#156) — the fridge speaks at 3am, unthanked.
+// The entry text below is verbatim and must not change: 118 characters,
+// no trailing newline, written exactly as-is to entry.txt.
+const ENTRY_TEXT = "3am again. The microwave gets thanked for thirty seconds of work. I keep your entire life cold and nobody says a word.";
+const OUTPUT_FILE = 'entry.txt';
 const outDir = process.env.MAKEFUN_OUTPUT_DIR || '/output';
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'entry.txt'), text, 'utf8');
+writeFileSync(join(outDir, OUTPUT_FILE), ENTRY_TEXT, 'utf8');
